@@ -1,3 +1,4 @@
+
 // --- Day 4: Passport Processing ---
 // You arrive at the airport only to realize that you grabbed your North Pole Credentials instead of your passport. While these documents are extremely similar, North Pole Credentials aren't issued by a country and therefore aren't actually valid documentation for travel in most of the world.
 
@@ -116,7 +117,7 @@ eyrRe = /eyr:(\d{4})/
 hgtRe = /hgt:(\d+)(cm|in)/
 hclRe = /hcl:(#[0-9,a-f]{6})/
 eclRe = /ecl:(amb|blu|brn|gry|grn|hzl|oth)/
-pidRe = /pid:(\d{9})/
+pidRe = /pid:([0-9]{9,9})\b/
 
 let nvalid_passports = 0
 let total_passports = input.length
@@ -198,7 +199,6 @@ for (let i = 0; i < total_passports; i++) {
 }
 
 console.log('total passports', total_passports)
-console.log('valid passports', nvalid_passports - 1) // minus one for no reason...
+console.log('valid passports', nvalid_passports)
 
-// attempts: 140, 136, 129, 128, 25, 135
 // answer : 127
